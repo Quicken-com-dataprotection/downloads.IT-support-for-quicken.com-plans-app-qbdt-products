@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proadvisor of Quicken - Complete IT Support Solutions</title>
+    <link rel="icon" type="image/png" href="https://placehold.co/32x32/3816CC/FFFFFF?text=P">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --primary-dark: #4338CA;
+            --secondary: #10B981;
+            --accent: #F59E0B;
+            --dark: #1F2937;
+            --light: #F9FAFB;
+            --gray: #6B7280;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.4);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(79, 70, 229, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
+            }
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 8px;
+            border: 2px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            font-size: 1.8rem;
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--accent), #FBBF24);
+            color: white;
+            font-weight: 700;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translate(0, 0px); }
+            50% { transform: translate(0, 15px); }
+            100% { transform: translate(0, -0px); }
+        }
+        
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 2.5rem 2rem;
+            border-radius: 16px 16px 0 0;
+            text-align: center;
+        }
+        
+        .modal-body {
+            padding: 2.5rem 2rem;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            background: white;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+        
+        .form-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        /* ID Generator Styles */
+        .id-generator-container {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .id-display {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            border: 2px dashed #d1d5db;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .id-display.active {
+            border-color: var(--primary);
+            background: #f0f9ff;
+        }
+        
+        .id-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 1rem 0;
+            letter-spacing: 1px;
+        }
+        
+        .copy-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .copy-btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* Video Thumbnail Styles */
+        .video-thumbnail {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .video-thumbnail img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .video-play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .video-play-button:hover {
+            background: white;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        .video-play-button i {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-left: 5px;
+        }
+        
+        /* Pricing Card Styles */
+        .pricing-card {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .pricing-card.disabled {
+            opacity: 0.5;
+            filter: grayscale(0.8);
+            pointer-events: none;
+        }
+        
+        .savings-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: linear-gradient(135deg, #10B981, #059669);
+            color: white;
+            font-weight: 700;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+            z-index: 10;
+        }
+        
+        .money-icon {
+            display: inline-block;
+            animation: money-float 3s ease-in-out infinite;
+        }
+        
+        @keyframes money-float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-footer {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .id-generator-container {
+                padding: 2rem 1.5rem;
+            }
+            
+            .id-value {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold">P</div>
+                <span class="text-xl font-bold">Proadvisor <span class="gradient-text">of Quicken</span></span>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#id-generator" class="nav-link">ID Generator</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <a href="tel:+18888103336" class="text-gray-600 hover:text-gray-900 transition-colors">
+                    <i class="fas fa-phone-alt"></i> Call Now
+                </a>
+                <button class="btn-primary js-open-modal">
+                    Get Support <i class="ml-2 fas fa-arrow-right"></i>
+                </button>
+            </div>
+            
+            <button class="md:hidden text-gray-600">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative gradient-bg text-white overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="container mx-auto px-4 py-24 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">Your One-Point IT Support Solution</h1>
+                <p class="text-xl mb-10 opacity-90">Complete support for printers, Microsoft issues, PC problems, and accounting software. <strong>Pay only after we fix your problem!</strong></p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button class="btn-secondary js-open-modal">
+                        Get Support Now <i class="ml-2 fas fa-tools"></i>
+                    </button>
+                    <a href="#id-generator" class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center">
+                        Generate ID <i class="ml-2 fas fa-id-card"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-20 max-w-5xl mx-auto">
+                <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-8 border border-white border-opacity-20">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold mb-2">24/7</div>
+                            <div class="text-white text-opacity-80">Expert Support</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold mb-2">Pay After</div>
+                            <div class="text-white text-opacity-80">Problem Solved</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold mb-2">All Devices</div>
+                            <div class="text-white text-opacity-80">Supported</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold mb-2">No Scams</div>
+                            <div class="text-white text-opacity-80">Guaranteed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Floating elements -->
+            <div class="absolute top-10 left-10 w-20 h-20 rounded-full bg-white bg-opacity-10 floating"></div>
+            <div class="absolute bottom-20 right-10 w-16 h-16 rounded-full bg-white bg-opacity-10 floating" style="animation-delay: 1s;"></div>
+            <div class="absolute top-1/3 right-1/4 w-12 h-12 rounded-full bg-white bg-opacity-10 floating" style="animation-delay: 2s;"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title">Complete IT Support Services</h2>
+            <p class="section-subtitle">We provide comprehensive solutions for all your technology needs. From printer issues to accounting software problems, we're your one-point solution.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-50 rounded-xl p-8 card-hover text-center">
+                    <div class="feature-icon">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Printer Support</h3>
+                    <p class="text-gray-600">Fix all printer issues - installation, configuration, connectivity, driver problems, and printing errors.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-8 card-hover text-center">
+                    <div class="feature-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Microsoft Support</h3>
+                    <p class="text-gray-600">Resolve issues with Windows, Office Suite, Outlook, and all Microsoft products and services.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-8 card-hover text-center">
+                    <div class="feature-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">PC & Device Support</h3>
+                    <p class="text-gray-600">Troubleshoot hardware and software problems for all computers, laptops, and mobile devices.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-8 card-hover text-center">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Accounting Software</h3>
+                    <p class="text-gray-600">Expert support for Quicken, QuickBooks, and other accounting software installation and troubleshooting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer ID Generator Section -->
+    <section id="id-generator" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title">Generate Your Customer ID</h2>
+            <p class="section-subtitle">Create your unique Proadvisor customer ID in seconds. This ID will be used for all your future support requests.</p>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="id-generator-container">
+                    <h3 class="text-2xl font-bold text-center mb-6">Customer ID Generator</h3>
+                    
+                    <div class="mb-6">
+                        <label for="id-quicken-version" class="form-label">Select Your Quicken Version</label>
+                        <select id="id-quicken-version" class="form-input">
+                            <option value="" disabled selected>Please select your Quicken version</option>
+                            <option value="Simplyfy">Simplyfy</option>
+                            <option value="Starter">Starter</option>
+                            <option value="Deluxe">Deluxe</option>
+                            <option value="Premier">Premier</option>
+                            <option value="Home & Business">Home & Business</option>
+                        </select>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button id="generate-id-btn" class="btn-primary">
+                            <i class="fas fa-bolt mr-2"></i> Generate Customer ID
+                        </button>
+                    </div>
+                    
+                    <div id="id-display" class="id-display">
+                        <i class="fas fa-id-card text-4xl text-gray-400 mb-4"></i>
+                        <p class="text-gray-600">Your customer ID will appear here</p>
+                        <div id="id-value" class="id-value"></div>
+                        <button id="copy-id-btn" class="copy-btn hidden">
+                            <i class="fas fa-copy mr-2"></i> Copy ID
+                        </button>
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <p class="text-gray-600 mb-4">Ready to get support?</p>
+                        <button class="btn-secondary js-open-modal">
+                            Get Support Now <i class="ml-2 fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h4 class="text-lg font-bold mb-4">About Your Customer ID</h4>
+                    <p class="text-gray-600 mb-4">Your unique customer ID follows this format:</p>
+                    <div class="bg-gray-100 p-4 rounded-lg mb-4">
+                        <code class="text-sm">PRO-YY-CODE-XXX</code>
+                    </div>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><strong>PRO:</strong> Proadvisor identifier</li>
+                        <li><strong>YY:</strong> Current year (last two digits)</li>
+                        <li><strong>CODE:</strong> Version code (SPL, STR, DLX, PMR, HNB)</li>
+                        <li><strong>XXX:</strong> Sequential number for your version</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <h2 class="text-4xl font-bold mb-6">Understanding Data Protection</h2>
+                    <p class="text-gray-300 mb-6 text-lg">In today's digital world, protecting your data is more important than ever. Learn how modern data protection regulations impact your business and personal information.</p>
+                    <p class="text-gray-400 mb-8">Video: "GDPR explained" by Channel 4 News</p>
+                    <a href="https://youtu.be/acijNEErf-c?si=GdJdk1N4zEiNBg3_" target="_blank" class="btn-secondary inline-flex items-center">
+                        <i class="fab fa-youtube mr-2"></i> Watch on YouTube
+                    </a>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="video-thumbnail rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://img.youtube.com/vi/acijNEErf-c/maxresdefault.jpg" alt="Data Protection Video Thumbnail">
+                        <div class="video-play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title">Simple, Transparent Pricing</h2>
+            <p class="section-subtitle">Choose the support plan that fits your needs. <strong>Pay only after we solve your problem!</strong></p>
+            
+            <div class="flex justify-center mb-12">
+                <div class="bg-gray-100 rounded-lg p-1 flex">
+                    <span id="monthly-toggle" class="px-4 py-2 rounded-md font-medium cursor-pointer toggle-option active bg-white text-blue-600 shadow">Monthly Payment</span>
+                    <span id="one-time-toggle" class="px-4 py-2 rounded-md font-medium cursor-pointer toggle-option">One-Time Payment <i class="money-icon fas fa-money-bill-wave ml-2"></i></span>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 1 Month Plan -->
+                <div id="one-month-plan" class="pricing-card bg-white rounded-2xl border border-gray-200 p-8 card-hover relative">
+                    <h3 class="text-2xl font-bold mb-2">1 Month Support</h3>
+                    <p class="text-gray-500 mb-6">Perfect for immediate issues</p>
+                    
+                    <div class="mb-6">
+                        <div class="text-4xl font-bold text-gray-800 monthly-price">$99</div>
+                        <div class="text-4xl font-bold text-gray-800 one-time-price hidden">$99</div>
+                        <div class="text-gray-500">one-time payment</div>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Unlimited Phone & Remote Support</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Printer & Hardware Troubleshooting</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Microsoft & Software Issues</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Quicken & QuickBooks Support</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span><strong>Pay After Problem Solved</strong></span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full py-3 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors js-open-modal">
+                        Choose Plan
+                    </button>
+                </div>
+                
+                <!-- 6 Month Plan -->
+                <div class="pricing-card bg-white rounded-2xl border border-gray-200 p-8 card-hover relative">
+                    <div class="savings-badge one-time-only hidden">Save $29</div>
+                    <h3 class="text-2xl font-bold mb-2">6 Month Support</h3>
+                    <p class="text-gray-500 mb-6">Great for ongoing support needs</p>
+                    
+                    <div class="mb-6">
+                        <div class="text-4xl font-bold text-gray-800 monthly-price">$38<span class="text-lg text-gray-500">/month</span></div>
+                        <div class="text-4xl font-bold text-gray-800 one-time-price hidden">$199</div>
+                        <div class="text-gray-500 monthly-price">billed monthly</div>
+                        <div class="text-gray-500 one-time-price hidden">one-time payment</div>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Unlimited Phone & Remote Support</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Printer & Hardware Troubleshooting</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Microsoft & Software Issues</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Quicken & QuickBooks Support</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span><strong>Pay After Problem Solved</strong></span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full py-3 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors js-open-modal">
+                        Choose Plan
+                    </button>
+                </div>
+                
+                <!-- Annual Plan -->
+                <div class="pricing-card bg-white rounded-2xl border-2 border-blue-600 p-8 card-hover relative shadow-lg pulse">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <div class="savings-badge one-time-only hidden">Save $37</div>
+                    <h3 class="text-2xl font-bold mb-2">Annual Support</h3>
+                    <p class="text-gray-500 mb-6">Best value for continuous support</p>
+                    
+                    <div class="mb-6">
+                        <div class="text-4xl font-bold text-gray-800 monthly-price">$28<span class="text-lg text-gray-500">/month</span></div>
+                        <div class="text-4xl font-bold text-gray-800 one-time-price hidden">$299</div>
+                        <div class="text-gray-500 monthly-price">billed monthly</div>
+                        <div class="text-gray-500 one-time-price hidden">one-time payment</div>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Unlimited Phone & Remote Support</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Printer & Hardware Troubleshooting</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Microsoft & Software Issues</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Quicken & QuickBooks Support</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span><strong>Pay After Problem Solved</strong></span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full btn-primary js-open-modal">
+                        Choose Plan
+                    </button>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <div id="one-time-benefits" class="hidden bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6 max-w-3xl mx-auto border border-green-200">
+                    <h3 class="text-xl font-bold text-green-800 mb-4">💰 Save Money with One-Time Payment!</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="text-center">
+                            <i class="fas fa-piggy-bank text-3xl text-green-600 mb-2"></i>
+                            <p class="text-green-700 font-medium">Save up to $37</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-lock text-3xl text-green-600 mb-2"></i>
+                            <p class="text-green-700 font-medium">Price Lock Guarantee</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-calendar-check text-3xl text-green-600 mb-2"></i>
+                            <p class="text-green-700 font-medium">No Monthly Bills</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title">Trusted by Customers</h2>
+            <p class="section-subtitle">Our customers' success stories speak for themselves. Here's what they have to say about our IT support services.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"Proadvisor fixed my printer issue in just 15 minutes after I'd been struggling for days. Their pay-after-work model is a game-changer!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold mr-4">SM</div>
+                        <div>
+                            <div class="font-bold">Sarah M.</div>
+                            <div class="text-gray-500 text-sm">Small Business Owner</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"I was worried about scams when looking for QuickBooks support, but Proadvisor was transparent and professional. They solved my issue and only then asked for payment."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold mr-4">MC</div>
+                        <div>
+                            <div class="font-bold">Mark C.</div>
+                            <div class="text-gray-500 text-sm">Accountant</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"As a freelancer, I can't afford downtime. Proadvisor fixed my Microsoft Office issues quickly and their pay-after model meant no risk for me. Highly recommended!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold mr-4">JA</div>
+                        <div>
+                            <div class="font-bold">Jessica A.</div>
+                            <div class="text-gray-500 text-sm">Freelancer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 gradient-bg text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to Solve Your IT Problems?</h2>
+            <p class="text-xl mb-10 max-w-2xl mx-auto opacity-90">Join thousands of satisfied customers who trust Proadvisor with their technology needs. <strong>Pay only after we fix your problem!</strong></p>
+            <button class="btn-secondary text-lg py-4 px-8 js-open-modal">
+                Get Support Now <i class="ml-2 fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 rounded-full gradient-bg flex items-center justify-center text-white font-bold">P</div>
+                        <span class="text-xl font-bold">Proadvisor of Quicken</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">Your one-point solution for all IT support needs. From printer issues to accounting software, we've got you covered. Pay only after we solve your problem!</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Printer Support</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Microsoft Support</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">PC & Device Support</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Accounting Software</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition-colors">Testimonials</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400"><i class="fas fa-phone-alt mr-2"></i> +1 888-810-3336</li>
+                        <li class="text-gray-400"><i class="fas fa-phone mr-2"></i> +1 800-917-3775</li>
+                        <li class="text-gray-400"><i class="fas fa-envelope mr-2"></i> support@proadvisor.com</li>
+                        <li class="text-gray-400"><i class="fas fa-clock mr-2"></i> 9AM-6PM EST (Mon-Fri)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; <span id="current-year"></span> Proadvisor of Quicken. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Registration Modal -->
+    <div class="modal-overlay js-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="text-3xl font-bold mb-2">Get IT Support Now</h2>
+                <p class="text-white text-opacity-90">Complete your details to get immediate support for your technology issues</p>
+                <button class="absolute top-4 right-4 text-white text-opacity-70 hover:text-opacity-100 transition-colors js-close-modal">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <form id="registerForm">
+                    <div class="form-grid">
+                        <!-- Name -->
+                        <div class="form-group">
+                            <label for="first_name" class="form-label">First Name</label>
+                            <input type="text" name="first_name" id="first_name" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="last_name" class="form-label">Last Name</label>
+                            <input type="text" name="last_name" id="last_name" class="form-input" required>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group full-width">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" name="email" id="email" class="form-input" required placeholder="you@example.com">
+                        </div>
+                        
+                        <!-- Contact Numbers -->
+                        <div class="form-group">
+                            <label for="contact_number" class="form-label">Contact Number</label>
+                            <input type="tel" name="contact_number" id="contact_number" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="alternate_contact_number" class="form-label">Alternate Contact (Optional)</label>
+                            <input type="tel" name="alternate_contact_number" id="alternate_contact_number" class="form-input" placeholder="Same as above if none">
+                        </div>
+
+                        <!-- Business & Plan -->
+                        <div class="form-group">
+                            <label for="company_name" class="form-label">Business Name (Optional)</label>
+                            <input type="text" name="company_name" id="company_name" class="form-input" placeholder="NA if none">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="plan_selector" class="form-label">Select Support Plan</label>
+                            <select id="plan_selector" name="plan_selector" class="form-input" required>
+                                <option value="" disabled selected>Please choose a support plan</option>
+                                <option value="1 Month">1 Month Support - $99</option>
+                                <option value="6 Month">6 Month Support - $199</option>
+                                <option value="Annual">Annual Support - $299</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Issue Description -->
+                        <div class="form-group full-width">
+                            <label for="issue_description" class="form-label">Describe Your Issue</label>
+                            <textarea name="issue_description" id="issue_description" class="form-input" rows="3" required placeholder="Please describe the technology issue you're experiencing..."></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div class="form-footer">
+                        <button type="button" class="text-blue-600 font-semibold hover:text-blue-800 transition-colors js-close-modal">
+                            <i class="fas fa-arrow-left mr-2"></i> Back to Plans
+                        </button>
+                        <button type="submit" class="btn-primary">
+                            Get Support Now
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Modal functionality
+        const modal = document.querySelector('.js-modal');
+        const openModalButtons = document.querySelectorAll('.js-open-modal');
+        const closeModalButtons = document.querySelectorAll('.js-close-modal');
+        
+        function openModal() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        openModalButtons.forEach(button => {
+            button.addEventListener('click', openModal);
+        });
+        
+        closeModalButtons.forEach(button => {
+            button.addEventListener('click', closeModal);
+        });
+        
+        // Close modal when clicking outside
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+        
+        // Form submission
+        const registerForm = document.getElementById('registerForm');
+        
+        registerForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Get form values
+            const firstName = document.getElementById('first_name').value;
+            const lastName = document.getElementById('last_name').value;
+            const email = document.getElementById('email').value;
+            const contactNumber = document.getElementById('contact_number').value;
+            const alternateContactNumber = document.getElementById('alternate_contact_number').value || 'N/A';
+            const companyName = document.getElementById('company_name').value || 'N/A';
+            const planSelector = document.getElementById('plan_selector').value;
+            const issueDescription = document.getElementById('issue_description').value;
+            
+            // Generate customer ID based on Quicken version
+            const quickenVersion = document.getElementById('id-quicken-version').value || 'General';
+            const customerId = generateCustomerId(quickenVersion);
+            
+            // Create file content
+            const fileContent = `Thank you for choosing Proadvisor of Quicken!
+
+CUSTOMER ID         : ${customerId}
+
+CONTACT INFORMATION:
+TECHNICAL DEPT      : +1 888-810-3336 / +1 800-917-3775 (Toll Free)
+DIRECT LINE         : +1 (818)-230-2770
+WORKING TIME        : 9:00 AM TO 6:00 PM EST (MONDAY TO FRIDAY)
+
+YOUR DETAILS:
+Name                : ${firstName} ${lastName}
+Email               : ${email}
+Contact Number      : ${contactNumber}
+Alternate Contact   : ${alternateContactNumber}
+Business Name       : ${companyName}
+Selected Plan       : ${planSelector}
+Issue Description   : ${issueDescription}
+
+We are committed to providing you with the highest level of IT support. Our technician will contact you shortly to resolve your issue. Remember - you only pay after we solve your problem!
+
+Thank you for trusting us with your technology needs.
+
+Sincerely,
+The Proadvisor Team
+`;
+            
+            // Trigger download
+            const element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(fileContent));
+            element.setAttribute('download', 'Support_Details.txt');
+            element.style.display = 'none';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+            
+            // Close modal after a delay
+            setTimeout(() => {
+                closeModal();
+                registerForm.reset();
+            }, 1000);
+        });
+
+        // Function to generate customer ID based on Quicken version
+        function generateCustomerId(quickenVersion) {
+            // Define version codes
+            const versionCodes = {
+                'Simplyfy': 'SPL',
+                'Starter': 'STR',
+                'Deluxe': 'DLX',
+                'Premier': 'PMR',
+                'Home & Business': 'HNB',
+                'General': 'GEN'
+            };
+            
+            // Get current year (last two digits)
+            const currentYear = new Date().getFullYear().toString().slice(-2);
+            
+            // Get code for the selected version
+            const versionCode = versionCodes[quickenVersion] || 'GEN';
+            
+            // Get and increment the counter for this version
+            const counterKey = `customerCounter_${versionCode}`;
+            let currentCounter = parseInt(localStorage.getItem(counterKey) || '0', 10);
+            let newCounter = currentCounter + 1;
+            localStorage.setItem(counterKey, newCounter.toString());
+            
+            // Format the counter as 3-digit number
+            const counterString = String(newCounter).padStart(3, '0');
+            
+            // Return the formatted customer ID
+            return `PRO-${currentYear}-${versionCode}-${counterString}`;
+        }
+        
+        // Customer ID Generator functionality
+        const generateIdBtn = document.getElementById('generate-id-btn');
+        const idDisplay = document.getElementById('id-display');
+        const idValue = document.getElementById('id-value');
+        const copyIdBtn = document.getElementById('copy-id-btn');
+        const idQuickenVersion = document.getElementById('id-quicken-version');
+        
+        generateIdBtn.addEventListener('click', function() {
+            const quickenVersion = idQuickenVersion.value;
+            
+            if (!quickenVersion) {
+                alert('Please select your Quicken version first.');
+                return;
+            }
+            
+            // Generate the customer ID
+            const customerId = generateCustomerId(quickenVersion);
+            
+            // Display the ID
+            idValue.textContent = customerId;
+            idDisplay.classList.add('active');
+            copyIdBtn.classList.remove('hidden');
+            
+            // Add a nice animation effect
+            idDisplay.style.transform = 'scale(1.02)';
+            setTimeout(() => {
+                idDisplay.style.transform = 'scale(1)';
+            }, 300);
+        });
+        
+        // Copy ID to clipboard
+        copyIdBtn.addEventListener('click', function() {
+            const customerId = idValue.textContent;
+            
+            navigator.clipboard.writeText(customerId).then(() => {
+                // Change button text temporarily
+                const originalText = copyIdBtn.innerHTML;
+                copyIdBtn.innerHTML = '<i class="fas fa-check mr-2"></i> Copied!';
+                
+                setTimeout(() => {
+                    copyIdBtn.innerHTML = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                alert('Failed to copy ID to clipboard. Please copy it manually.');
+            });
+        });
+        
+        // Pricing Toggle Functionality
+        const monthlyToggle = document.getElementById('monthly-toggle');
+        const oneTimeToggle = document.getElementById('one-time-toggle');
+        const monthlyPrices = document.querySelectorAll('.monthly-price');
+        const oneTimePrices = document.querySelectorAll('.one-time-price');
+        const oneMonthPlan = document.getElementById('one-month-plan');
+        const savingsBadges = document.querySelectorAll('.savings-badge');
+        const oneTimeBenefits = document.getElementById('one-time-benefits');
+        
+        monthlyToggle.addEventListener('click', function() {
+            monthlyToggle.classList.add('active', 'bg-white', 'text-blue-600', 'shadow');
+            monthlyToggle.classList.remove('font-medium');
+            oneTimeToggle.classList.remove('active', 'bg-white', 'text-blue-600', 'shadow');
+            oneTimeToggle.classList.add('font-medium');
+            
+            monthlyPrices.forEach(price => price.classList.remove('hidden'));
+            oneTimePrices.forEach(price => price.classList.add('hidden'));
+            savingsBadges.forEach(badge => badge.classList.add('hidden'));
+            oneTimeBenefits.classList.add('hidden');
+            
+            // Enable the 1-month plan
+            oneMonthPlan.classList.remove('disabled');
+        });
+        
+        oneTimeToggle.addEventListener('click', function() {
+            oneTimeToggle.classList.add('active', 'bg-white', 'text-blue-600', 'shadow');
+            oneTimeToggle.classList.remove('font-medium');
+            monthlyToggle.classList.remove('active', 'bg-white', 'text-blue-600', 'shadow');
+            monthlyToggle.classList.add('font-medium');
+            
+            monthlyPrices.forEach(price => price.classList.add('hidden'));
+            oneTimePrices.forEach(price => price.classList.remove('hidden'));
+            savingsBadges.forEach(badge => badge.classList.remove('hidden'));
+            oneTimeBenefits.classList.remove('hidden');
+            
+            // Disable the 1-month plan
+            oneMonthPlan.classList.add('disabled');
+        });
+        
+        // Video Thumbnail Click Handler
+        const videoThumbnail = document.querySelector('.video-thumbnail');
+        videoThumbnail.addEventListener('click', function() {
+            window.open('https://youtu.be/acijNEErf-c?si=GdJdk1N4zEiNBg3_', '_blank');
+        });
+    </script>
+</body>
+</html>
